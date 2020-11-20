@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "04e2302b-0d8a-4ce5-b060-c9ad50a12500",
+		"name": "Data from CSV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "270d0eab-4638-418c-939b-302468d0f28f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(pm.variables.get(\"statusCode\"));",
+							"});",
+							"",
+							"pm.test(\"Random fail/pass\", function () {",
+							"    pm.expect(Math.random()).to.be.below(0.5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "11044237-64f4-4a3a-b11d-8e22923d3ccd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(pm.variables.get(\"statusCode\"));",
+							"});",
+							"",
+							"pm.test(\"Random fail/pass\", function () {",
+							"    pm.expect(Math.random()).to.be.below(0.5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{$randomFullName}}\",\n    \"company\": \"{{$randomCompanyName}}\",\n    \"phone\": \"{{$randomPhoneNumber}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get more data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fb31d9f7-96b3-48c7-a6e8-872c182b64f3",
+						"exec": [
+							"pm.test(\"Random fail/pass - 1\", function () {",
+							"    pm.expect(Math.random()).to.be.below(0.5);",
+							"});",
+							"",
+							"pm.test(\"Random fail/pass - 2\", function () {",
+							"    pm.expect(Math.random()).to.be.below(0.5);",
+							"});",
+							"",
+							"pm.test(\"Random fail/pass - 3\", function () {",
+							"    pm.expect(Math.random()).to.be.below(0.5);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "httpbin.org/get",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
