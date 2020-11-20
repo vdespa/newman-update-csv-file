@@ -1,0 +1,4 @@
+id,name,city,statusCode,testResult
+1,John Doe,New York,200,FAILED
+2,Jane Doe,Los Angeles,400,FAILED
+3,Mike Doe,Austin,200,FAILED
